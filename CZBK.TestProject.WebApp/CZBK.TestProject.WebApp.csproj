@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{679C3157-08D7-4715-924B-618933B37B5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CZBK.TestProject.WebApp</RootNamespace>
+    <AssemblyName>CZBK.TestProject.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2014-11-08\aaa.txt" />
+    <Content Include="2014-11-08\aspxCURD\AddUserInfo.aspx" />
+    <Content Include="2014-11-08\aspxCURD\Edit.aspx" />
+    <Content Include="2014-11-08\aspxCURD\Index.aspx" />
+    <Content Include="2014-11-08\aspxCURD\ShowDetail.aspx" />
+    <Content Include="2014-11-08\DownLoad.html" />
+    <Content Include="2014-11-08\FileUpload.html" />
+    <Content Include="2014-11-08\index.html" />
+    <Content Include="2014-11-08\jquery.min.js" />
+    <Content Include="2014-11-08\Login.html" />
+    <Content Include="2014-11-08\ShowValidateCode.aspx" />
+    <Content Include="2014-11-10\Buffer\Buffer_Demo.aspx" />
+    <Content Include="2014-11-10\NewList.aspx" />
+    <Content Include="2014-11-10\Server\HtmlEncode.aspx" />
+    <Content Include="2014-11-10\Server\Server_Demo.aspx" />
+    <Content Include="2014-11-10\Server\Server_Demo2.aspx" />
+    <Content Include="2014-11-10\UrlReferrer\Demo.html" />
+    <Content Include="2014-11-10\ViewState\ViewState_Demo.aspx" />
+    <Content Include="2014-11-10\ViewState\WebForm1.aspx" />
+    <Content Include="2014-11-10\WebDemos\flash\main_fla.swf" />
+    <Content Include="2014-11-10\WebDemos\flash\sub_fla.swf" />
+    <Content Include="2014-11-10\WebDemos\Html\News.html" />
+    <Content Include="2014-11-10\WebDemos\Html\Shownews.html" />
+    <Content Include="2014-11-10\WebDemos\images\bg_a_list_prd_dt.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_body.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_body_column.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_dotlightblue.gif" />
+    <Content Include="2014-11-10\WebDemos\images\bg_footer_column.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_Client.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_company.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_Contact.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_Employment.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_News.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_Product.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_header_Service.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\bg_main_column.gif" />
+    <Content Include="2014-11-10\WebDemos\images\bg_position.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_position_product.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_title_column.png" />
+    <Content Include="2014-11-10\WebDemos\images\bg_wrap_index.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\icon_dot_blue.png" />
+    <Content Include="2014-11-10\WebDemos\images\icon_dot_gray.gif" />
+    <Content Include="2014-11-10\WebDemos\images\icon_drgegray.png" />
+    <Content Include="2014-11-10\WebDemos\images\img_contact_sidebarcolumn.png" />
+    <Content Include="2014-11-10\WebDemos\images\img_copyright_column.png" />
+    <Content Include="2014-11-10\WebDemos\images\img_copyright_index.png" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_HousingSecurity.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_MaintenanceFunds.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_Mapping.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_NewHouse.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_Practitioners.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_ProjectManagement.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_Property.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_Statistics.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_StockHouse.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\img_prd_Transaction.jpg" />
+    <Content Include="2014-11-10\WebDemos\images\logo.png" />
+    <Content Include="2014-11-10\WebDemos\images\nav_column.png" />
+    <Content Include="2014-11-10\WebDemos\images\nav_index.png" />
+    <Content Include="2014-11-10\WebDemos\images\top-2.gif" />
+    <Content Include="2014-11-10\WebDemos\style\CommonStyle.css" />
+    <Content Include="2014-11-10\WebDemos\style\pageStyle.css" />
+    <Content Include="2014-11-10\WebDemos\style\style.css" />
+    <Content Include="2014-11-11\CookieLogin.aspx" />
+    <Content Include="2014-11-11\Cookie_Demo.aspx" />
+    <Content Include="2014-11-11\Cookie_Demo2.aspx" />
+    <Content Include="2014-11-11\Login.aspx" />
+    <Content Include="2014-11-11\Session_Demo.aspx" />
+    <Content Include="2014-11-11\Test.aspx" />
+    <Content Include="2014-11-13\AdminIndex.aspx" />
+    <Content Include="2014-11-13\AjaxDemo_Get.aspx" />
+    <Content Include="2014-11-13\Ajax_Demo.aspx" />
+    <Content Include="2014-11-13\Ajax_Post.aspx" />
+    <Content Include="2014-11-13\Default.aspx" />
+    <Content Include="2014-11-13\Image\login_bg.jpg" />
+    <Content Include="2014-11-13\Image\login_img.jpg" />
+    <Content Include="2014-11-13\Image\login_leftbg.jpg" />
+    <Content Include="2014-11-13\Image\login_line.jpg" />
+    <Content Include="2014-11-13\Image\login_menu2.jpg" />
+    <Content Include="2014-11-13\Image\login_rigbg.jpg" />
+    <Content Include="2014-11-13\Image\login_tit.jpg" />
+    <Content Include="2014-11-13\Image\style.css" />
+    <Content Include="2014-11-13\JqueryAjax_Demo.aspx" />
+    <Content Include="2014-11-13\Login.aspx" />
+    <Content Include="css\pageBar.css" />
+    <Content Include="css\tableStyle.css" />
+    <Content Include="Edit.html" />
+    <Content Include="js\jquery-1.7.1.js" />
+    <Content Include="ShowDetail.html" />
+    <Content Include="UserInfoList.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2014-11-08\aspxCURD\AddUserInfo.aspx.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\AddUserInfo.aspx.designer.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\Delete.ashx.cs">
+      <DependentUpon>Delete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\ShowDetail.aspx.cs">
+      <DependentUpon>ShowDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-08\aspxCURD\ShowDetail.aspx.designer.cs">
+      <DependentUpon>ShowDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\DownLoad.ashx.cs">
+      <DependentUpon>DownLoad.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\ImageCreate.ashx.cs">
+      <DependentUpon>ImageCreate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\ShowValidateCode.aspx.cs">
+      <DependentUpon>ShowValidateCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-08\ShowValidateCode.aspx.designer.cs">
+      <DependentUpon>ShowValidateCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\Buffer\Buffer_Demo.aspx.cs">
+      <DependentUpon>Buffer_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\Buffer\Buffer_Demo.aspx.designer.cs">
+      <DependentUpon>Buffer_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\NewList.aspx.cs">
+      <DependentUpon>NewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\NewList.aspx.designer.cs">
+      <DependentUpon>NewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\Server\HtmlEncode.aspx.cs">
+      <DependentUpon>HtmlEncode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\Server\HtmlEncode.aspx.designer.cs">
+      <DependentUpon>HtmlEncode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\Server\Server_Demo.aspx.cs">
+      <DependentUpon>Server_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\Server\Server_Demo.aspx.designer.cs">
+      <DependentUpon>Server_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\Server\Server_Demo2.aspx.cs">
+      <DependentUpon>Server_Demo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\Server\Server_Demo2.aspx.designer.cs">
+      <DependentUpon>Server_Demo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\UrlReferrer\ShowImage.ashx.cs">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\UrlReferrer\UrlReferrerHanlder.ashx.cs">
+      <DependentUpon>UrlReferrerHanlder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\ViewState\ViewState_Demo.aspx.cs">
+      <DependentUpon>ViewState_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\ViewState\ViewState_Demo.aspx.designer.cs">
+      <DependentUpon>ViewState_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-10\ViewState\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-10\ViewState\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\CookieLogin.aspx.cs">
+      <DependentUpon>CookieLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\CookieLogin.aspx.designer.cs">
+      <DependentUpon>CookieLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\Cookie_Demo.aspx.cs">
+      <DependentUpon>Cookie_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\Cookie_Demo.aspx.designer.cs">
+      <DependentUpon>Cookie_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\Cookie_Demo2.aspx.cs">
+      <DependentUpon>Cookie_Demo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\Cookie_Demo2.aspx.designer.cs">
+      <DependentUpon>Cookie_Demo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\Session_Demo.aspx.cs">
+      <DependentUpon>Session_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\Session_Demo.aspx.designer.cs">
+      <DependentUpon>Session_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-11\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-11\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\AdminIndex.aspx.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\AdminIndex.aspx.designer.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\AjaxDemo_Get.aspx.cs">
+      <DependentUpon>AjaxDemo_Get.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\AjaxDemo_Get.aspx.designer.cs">
+      <DependentUpon>AjaxDemo_Get.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\Ajax_Demo.aspx.cs">
+      <DependentUpon>Ajax_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\Ajax_Demo.aspx.designer.cs">
+      <DependentUpon>Ajax_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\Ajax_Get.ashx.cs">
+      <DependentUpon>Ajax_Get.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\Ajax_Post.aspx.cs">
+      <DependentUpon>Ajax_Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\Ajax_Post.aspx.designer.cs">
+      <DependentUpon>Ajax_Post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\JqueryAjax_Demo.aspx.cs">
+      <DependentUpon>JqueryAjax_Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\JqueryAjax_Demo.aspx.designer.cs">
+      <DependentUpon>JqueryAjax_Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2014-11-13\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\LoginOut.ashx.cs">
+      <DependentUpon>LoginOut.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-13\ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Edit.ashx.cs">
+      <DependentUpon>Edit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2014-11-08\HttpClientTest.ashx.cs">
+      <DependentUpon>HttpClientTest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessEdit.ashx.cs">
+      <DependentUpon>ProcessEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowDetail.ashx.cs">
+      <DependentUpon>ShowDetail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Thum.ashx.cs">
+      <DependentUpon>Thum.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoList.ashx.cs">
+      <DependentUpon>UserInfoList.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserInfoList.ashx" />
+    <Content Include="ShowDetail.ashx" />
+    <Content Include="Edit.ashx" />
+    <Content Include="ProcessEdit.ashx" />
+    <Content Include="2014-11-08\FileUpload.ashx" />
+    <Content Include="2014-11-08\ImageCreate.ashx" />
+    <Content Include="Thum.ashx" />
+    <Content Include="2014-11-08\ValidateCode.ashx" />
+    <Content Include="2014-11-08\aaa.rar" />
+    <Content Include="2014-11-08\DownLoad.ashx" />
+    <Content Include="2014-11-08\aspxCURD\Delete.ashx" />
+    <Content Include="2014-11-10\UrlReferrer\UrlReferrerHanlder.ashx" />
+    <Content Include="2014-11-10\UrlReferrer\ShowImage.ashx" />
+    <Content Include="2014-11-13\ValidateCode.ashx" />
+    <Content Include="2014-11-13\LoginOut.ashx" />
+    <Content Include="2014-11-13\Ajax_Get.ashx" />
+    <Content Include="2014-11-08\Login.ashx" />
+    <Content Include="2014-11-08\HttpClientTest.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CZBK.TestProject.BLL\CZBK.TestProject.BLL.csproj">
+      <Project>{6e792952-bcb5-4cc4-931f-0fbffa610193}</Project>
+      <Name>CZBK.TestProject.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CZBK.TestProject.Common\CZBK.TestProject.Common.csproj">
+      <Project>{e5ca2cd5-54b8-4a9d-824d-709baa838558}</Project>
+      <Name>CZBK.TestProject.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CZBK.TestProject.Model\CZBK.TestProject.Model.csproj">
+      <Project>{b9f53d11-90f3-4a23-8c30-00084b8e580f}</Project>
+      <Name>CZBK.TestProject.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImagePath\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6074/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyFirstDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="int" />
+          <Property Name="update_time" Type="int" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ComId" />
+          </Key>
+          <Property Name="ComId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="10" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Address" Type="varchar" MaxLength="300" />
+          <Property Name="PostalCode" Type="int" />
+          <Property Name="Country" Type="varchar" MaxLength="10" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="20" />
+          <Property Name="ReportsTo" Type="int" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepId" />
+          </Key>
+          <Property Name="DepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DepDesic" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpIdCardNo" Type="varchar" MaxLength="18" />
+          <Property Name="EmpName" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmpGender" Type="nvarchar" MaxLength="1" />
+          <Property Name="EmpJoinDate" Type="datetime" />
+          <Property Name="EmpAge" Type="int" />
+          <Property Name="EmpAddress" Type="nvarchar" MaxLength="300" />
+          <Property Name="EmpPhone" Type="varchar" MaxLength="200" />
+          <Property Name="EmpEmail" Type="varchar" MaxLength="100" />
+          <Property Name="DepId" Type="int" />
+        </EntityType>
+        <EntityType Name="NBAScore">
+          <Key>
+            <PropertyRef Name="autoId" />
+          </Key>
+          <Property Name="autoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="nvarchar" MaxLength="10" />
+          <Property Name="seasonName" Type="nvarchar" MaxLength="10" />
+          <Property Name="Score" Type="int" />
+        </EntityType>
+        <EntityType Name="Seats">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="LoginPassword" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ErrorTimes" Type="int" />
+          <Property Name="LockDateTime" Type="datetime" />
+          <Property Name="TestInt" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“MyFirstDatabase.dbo.SeatsCopy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SeatsCopy">
+          <Key>
+            <PropertyRef Name="AutoId" />
+            <PropertyRef Name="LoginId" />
+            <PropertyRef Name="LoginPassword" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="AutoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="LoginPassword" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ErrorTimes" Type="int" />
+          <Property Name="LockDateTime" Type="datetime" />
+          <Property Name="TestInt" Type="int" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sid" Type="int" Nullable="false" />
+          <Property Name="Gender" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="autoId" />
+          </Key>
+          <Property Name="autoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="studentId" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="courseName" Type="nvarchar" MaxLength="10" />
+          <Property Name="score" Type="int" />
+        </EntityType>
+        <EntityType Name="TblTeacher">
+          <Key>
+            <PropertyRef Name="tTId" />
+          </Key>
+          <Property Name="tTId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tTName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tTGender" Type="nvarchar" MaxLength="2" />
+          <Property Name="tTAge" Type="int" />
+          <Property Name="tTSalary" Type="float" />
+          <Property Name="tTBirthday" Type="datetime" />
+          <Property Name="tTJoinDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Test1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="单号" Type="char" MaxLength="10" />
+          <Property Name="金额" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Test2">
+          <Key>
+            <PropertyRef Name="scoreId" />
+          </Key>
+          <Property Name="scoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="nvarchar" MaxLength="10" />
+          <Property Name="gameDate" Type="datetime" />
+          <Property Name="gameResult" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="xiaoshuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="content" Type="nvarchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MyFirstDatabaseModelStoreContainer">
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NBAScore" EntityType="Self.NBAScore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seats" EntityType="Self.Seats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTeacher" EntityType="Self.TblTeacher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test1" EntityType="Self.Test1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test2" EntityType="Self.Test2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xiaoshuo" EntityType="Self.xiaoshuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeatsCopy" EntityType="Self.SeatsCopy" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SeatsCopy].[AutoId] AS [AutoId], 
+    [SeatsCopy].[LoginId] AS [LoginId], 
+    [SeatsCopy].[LoginPassword] AS [LoginPassword], 
+    [SeatsCopy].[UserName] AS [UserName], 
+    [SeatsCopy].[ErrorTimes] AS [ErrorTimes], 
+    [SeatsCopy].[LockDateTime] AS [LockDateTime], 
+    [SeatsCopy].[TestInt] AS [TestInt]
+    FROM [dbo].[SeatsCopy] AS [SeatsCopy]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyFirstDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="Int32" />
+          <Property Name="update_time" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ComId" />
+          </Key>
+          <Property Name="ComId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="Int32" />
+          <Property Name="Country" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ReportsTo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepId" />
+          </Key>
+          <Property Name="DepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DepDesic" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpIdCardNo" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="EmpName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmpGender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="EmpJoinDate" Type="DateTime" Precision="3" />
+          <Property Name="EmpAge" Type="Int32" />
+          <Property Name="EmpAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="EmpPhone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EmpEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DepId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NBAScore">
+          <Key>
+            <PropertyRef Name="autoId" />
+          </Key>
+          <Property Name="autoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="seasonName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Score" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Seats">
+          <Key>
+            <PropertyRef Name="AutoId" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoginPassword" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ErrorTimes" Type="Int32" />
+          <Property Name="LockDateTime" Type="DateTime" Precision="3" />
+          <Property Name="TestInt" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sid" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="autoId" />
+          </Key>
+          <Property Name="autoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="studentId" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courseName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="score" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TblTeacher">
+          <Key>
+            <PropertyRef Name="tTId" />
+          </Key>
+          <Property Name="tTId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tTName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tTGender" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="tTAge" Type="Int32" />
+          <Property Name="tTSalary" Type="Double" />
+          <Property Name="tTBirthday" Type="DateTime" Precision="3" />
+          <Property Name="tTJoinDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Test1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="单号" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="金额" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Test2">
+          <Key>
+            <PropertyRef Name="scoreId" />
+          </Key>
+          <Property Name="scoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="gameDate" Type="DateTime" Precision="3" />
+          <Property Name="gameResult" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="xiaoshuo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="content" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SeatsCopy">
+          <Key>
+            <PropertyRef Name="AutoId" />
+            <PropertyRef Name="LoginId" />
+            <PropertyRef Name="LoginPassword" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="AutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoginPassword" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ErrorTimes" Type="Int32" />
+          <Property Name="LockDateTime" Type="DateTime" Precision="3" />
+          <Property Name="TestInt" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MyFirstDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Area" EntityType="Self.Area" />
+          <EntitySet Name="Company" EntityType="Self.Company" />
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="NBAScore" EntityType="Self.NBAScore" />
+          <EntitySet Name="Seats" EntityType="Self.Seats" />
+          <EntitySet Name="Student" EntityType="Self.Student" />
+          <EntitySet Name="Students" EntityType="Self.Students" />
+          <EntitySet Name="TblTeacher" EntityType="Self.TblTeacher" />
+          <EntitySet Name="Test1" EntityType="Self.Test1" />
+          <EntitySet Name="Test2" EntityType="Self.Test2" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="xiaoshuo" EntityType="Self.xiaoshuo" />
+          <EntitySet Name="SeatsCopy" EntityType="Self.SeatsCopy" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyFirstDatabaseModelStoreContainer" CdmEntityContainer="MyFirstDatabaseEntities1">
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="ComId" ColumnName="ComId" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="ReportsTo" ColumnName="ReportsTo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepId" ColumnName="DepId" />
+                <ScalarProperty Name="DepName" ColumnName="DepName" />
+                <ScalarProperty Name="DepDesic" ColumnName="DepDesic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpIdCardNo" ColumnName="EmpIdCardNo" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpGender" ColumnName="EmpGender" />
+                <ScalarProperty Name="EmpJoinDate" ColumnName="EmpJoinDate" />
+                <ScalarProperty Name="EmpAge" ColumnName="EmpAge" />
+                <ScalarProperty Name="EmpAddress" ColumnName="EmpAddress" />
+                <ScalarProperty Name="EmpPhone" ColumnName="EmpPhone" />
+                <ScalarProperty Name="EmpEmail" ColumnName="EmpEmail" />
+                <ScalarProperty Name="DepId" ColumnName="DepId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NBAScore">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.NBAScore">
+              <MappingFragment StoreEntitySet="NBAScore">
+                <ScalarProperty Name="autoId" ColumnName="autoId" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="seasonName" ColumnName="seasonName" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seats">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Seats">
+              <MappingFragment StoreEntitySet="Seats">
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ErrorTimes" ColumnName="ErrorTimes" />
+                <ScalarProperty Name="LockDateTime" ColumnName="LockDateTime" />
+                <ScalarProperty Name="TestInt" ColumnName="TestInt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="autoId" ColumnName="autoId" />
+                <ScalarProperty Name="studentId" ColumnName="studentId" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="score" ColumnName="score" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTeacher">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.TblTeacher">
+              <MappingFragment StoreEntitySet="TblTeacher">
+                <ScalarProperty Name="tTId" ColumnName="tTId" />
+                <ScalarProperty Name="tTName" ColumnName="tTName" />
+                <ScalarProperty Name="tTGender" ColumnName="tTGender" />
+                <ScalarProperty Name="tTAge" ColumnName="tTAge" />
+                <ScalarProperty Name="tTSalary" ColumnName="tTSalary" />
+                <ScalarProperty Name="tTBirthday" ColumnName="tTBirthday" />
+                <ScalarProperty Name="tTJoinDate" ColumnName="tTJoinDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test1">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Test1">
+              <MappingFragment StoreEntitySet="Test1">
+                <ScalarProperty Name="单号" ColumnName="单号" />
+                <ScalarProperty Name="金额" ColumnName="金额" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test2">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Test2">
+              <MappingFragment StoreEntitySet="Test2">
+                <ScalarProperty Name="scoreId" ColumnName="scoreId" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="gameDate" ColumnName="gameDate" />
+                <ScalarProperty Name="gameResult" ColumnName="gameResult" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xiaoshuo">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.xiaoshuo">
+              <MappingFragment StoreEntitySet="xiaoshuo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="content" ColumnName="content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeatsCopy">
+            <EntityTypeMapping TypeName="MyFirstDatabaseModel.SeatsCopy">
+              <MappingFragment StoreEntitySet="SeatsCopy">
+                <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="LoginPassword" ColumnName="LoginPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ErrorTimes" ColumnName="ErrorTimes" />
+                <ScalarProperty Name="LockDateTime" ColumnName="LockDateTime" />
+                <ScalarProperty Name="TestInt" ColumnName="TestInt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
